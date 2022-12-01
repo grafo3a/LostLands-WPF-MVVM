@@ -1,0 +1,156 @@
+﻿<Window x:Class="LostLands_WPF_MVVM.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:LostLands_WPF_MVVM.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
+        mc:Ignorable="d" FontSize="16"
+        Title="LostLands-WPF-MVVM"
+        Height="480" MinHeight="480" Width="800" MinWidth="800"
+        Background="Beige" WindowStartupLocation="CenterScreen">
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <!-- ZONE01-->
+        <!-- Options are defined in the class ShellViewModel.cs, in the array "Strings".
+        Warning: do not bind SelectedItem below! -->
+        <ComboBox x:Name="Strings" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+                  SelectedItem="English"
+                  Visibility="{Binding Path=VisibilityOfZone01}" />
+
+        <Button x:Name="ButtonConfirmLanguage"
+                Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2"
+                FontSize="16" Height="30" Margin="20,0,0,0"
+                Visibility="{Binding Path=VisibilityOfZone01, Mode=OneWay}"
+                Content="Confirm">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock x:Name="LabelGameLanguage"
+                   Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="4"
+                   HorizontalAlignment="Right"
+                   Text="{Binding Path=GameDictionaryInfo, Mode=OneWay}" />
+
+        <!-- ZONE02 -->
+        <TextBlock x:Name="LabelStats" Grid.Column="1" Grid.Row="3" FontSize="16"
+                   FontFamily="Courier New" Grid.ColumnSpan="2"
+                   Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}" />
+
+        <TextBlock x:Name="LabelGuessedWord" Grid.Column="3" Grid.Row="5"
+                   FontSize="60" FontFamily="Courier New" FontWeight="Bold" Grid.ColumnSpan="8"
+                   TextAlignment="Left" TextWrapping="Wrap"
+                   Margin="0,20,0,20"
+                   Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}" />
+
+        <TextBlock x:Name="LabelGameNumber" Grid.Column="1" Grid.Row="7"
+                   FontSize="16" FontFamily="Courier New" Grid.ColumnSpan="2"
+                   Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}">Game #: 0</TextBlock>
+
+        <TextBlock x:Name="LabelLetterPrompt"
+                   Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9"
+                   FontSize="16" FontFamily="Courier New" TextAlignment="Right"
+                   Margin="0,20,10,0"
+                   Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}" />
+
+        <TextBox x:Name="TextboxTypedLetter" Grid.Column="3" Grid.Row="9" FontSize="16" Width="100"
+                 Margin="0,20,0,0"
+                 IsEnabled="{Binding Path=IsGameEnabled, Mode=OneWay}"
+                 Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}" />
+
+        <Button x:Name="ButtonPlay"
+                Grid.Column="5" Grid.Row="9"
+                FontSize="16" Width="100" Height="40"
+                Grid.ColumnSpan="1" Margin="0,20,0,0"
+                IsEnabled="{Binding Path=IsGameEnabled, Mode=OneWay}"
+                Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}"
+                Content="Play">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- ZONE03 -->
+        <Button x:Name="ButtonContinue" Grid.Column="7" Grid.Row="9"
+                FontSize="16" Width="100" Height="40"
+                Grid.ColumnSpan="1" Margin="0,20,0,0"
+                IsEnabled="{Binding Path=IsNextGamePlayable, Mode=OneWay}"
+                Visibility="{Binding Path=VisibilityOfZone03, Mode=OneWay}"
+                Content="Continue">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock x:Name="LabelGameComments" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="4"
+                   FontSize="16" FontFamily="Courier New"
+                   Visibility="{Binding Path=VisibilityOfZone03, Mode=OneWay}"
+                   Foreground="{Binding Path=CommentColor}"/>
+
+        <!-- ZONE04 -->
+        <Button x:Name="ButtonStartNewRound" Grid.Column="9" Grid.Row="9"
+                FontSize="16" Width="100" Height="40"
+                Grid.ColumnSpan="1" Margin="0,20,0,0"
+                IsEnabled="{Binding Path=IsNextRoundReady, Mode=OneWay}"
+                Visibility="{Binding Path=VisibilityOfZone04, Mode=OneWay}"
+                Content="New Round">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- ZONE05 -->
+        <Button x:Name="ButtonResetGame" Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="11"
+                FontSize="16" Height="30"
+                Opacity="0.7"
+                Visibility="{Binding Path=VisibilityOfZone05, Mode=OneWay}"
+                Content="Reset the Game">
+        </Button>
+    </Grid>
+    
+</Window>
