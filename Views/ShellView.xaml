@@ -21,7 +21,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="10" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="10" />
             <RowDefinition Height="Auto" />
@@ -32,7 +32,8 @@
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="50" />
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="10" />
@@ -46,13 +47,13 @@
         <!-- ZONE01-->
         <!-- Options are defined in the class ShellViewModel.cs, in the array "Strings".
         Warning: do not bind SelectedItem below! -->
-        <ComboBox x:Name="Strings" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+        <ComboBox x:Name="Strings" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1"
                   SelectedItem="English"
                   Visibility="{Binding Path=VisibilityOfZone01}" />
 
         <Button x:Name="ButtonConfirmLanguage"
                 Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2"
-                FontSize="16" Height="30" Margin="20,0,0,0"
+                FontSize="16" Height="30" Margin="0,0,0,0"
                 Visibility="{Binding Path=VisibilityOfZone01, Mode=OneWay}"
                 Content="Confirm">
 
@@ -86,18 +87,19 @@
         <TextBlock x:Name="LabelLetterPrompt"
                    Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9"
                    FontSize="16" FontFamily="Courier New" TextAlignment="Right"
-                   Margin="0,20,10,0"
+                   Margin="0,0,10,10"
                    Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}" />
 
-        <TextBox x:Name="TextboxTypedLetter" Grid.Column="3" Grid.Row="9" FontSize="16" Width="100"
-                 Margin="0,20,0,0"
+        <TextBox x:Name="TextboxTypedLetter" Grid.Column="3" Grid.Row="9"
+                 Grid.ColumnSpan="2" FontSize="16"
+                 Width="100" Margin="0,0,0,10"
                  IsEnabled="{Binding Path=IsGameEnabled, Mode=OneWay}"
                  Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}" />
 
         <Button x:Name="ButtonPlay"
-                Grid.Column="5" Grid.Row="9"
+                Grid.Column="6" Grid.Row="9"
                 FontSize="16" Width="100" Height="40"
-                Grid.ColumnSpan="1" Margin="0,20,0,0"
+                Grid.ColumnSpan="1" Margin="0,0,0,10"
                 IsEnabled="{Binding Path=IsGameEnabled, Mode=OneWay}"
                 Visibility="{Binding Path=VisibilityOfZone02, Mode=OneWay}"
                 Content="Play">
@@ -108,11 +110,29 @@
                 </Style>
             </Button.Resources>
         </Button>
+        
+        
+        <!-- Easy selection buttons -->
+        <Button x:Name="ButtonGoBack" FontSize="14"
+                Grid.Column="3" Grid.Row="8"
+                BorderThickness="1" BorderBrush="Gray"
+                Visibility="Hidden">
+            <Polygon Points="18,0 0,10 18,20" Fill="Gray" />
+        </Button>
 
+
+        <Button x:Name="ButtonGoForward" FontSize="14"
+                Grid.Column="4" Grid.Row="8"
+                BorderThickness="1" BorderBrush="Gray"
+                Visibility="Hidden">
+            <Polygon Points="0,0 18,10 0,20" Fill="Gray" />
+        </Button>
+        
+        
         <!-- ZONE03 -->
-        <Button x:Name="ButtonContinue" Grid.Column="7" Grid.Row="9"
+        <Button x:Name="ButtonContinue" Grid.Column="8" Grid.Row="9"
                 FontSize="16" Width="100" Height="40"
-                Grid.ColumnSpan="1" Margin="0,20,0,0"
+                Grid.ColumnSpan="1" Margin="0,0,0,10"
                 IsEnabled="{Binding Path=IsNextGamePlayable, Mode=OneWay}"
                 Visibility="{Binding Path=VisibilityOfZone03, Mode=OneWay}"
                 Content="Continue">
@@ -124,15 +144,15 @@
             </Button.Resources>
         </Button>
 
-        <TextBlock x:Name="LabelGameComments" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="4"
+        <TextBlock x:Name="LabelGameComments" Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="4"
                    FontSize="16" FontFamily="Courier New"
                    Visibility="{Binding Path=VisibilityOfZone03, Mode=OneWay}"
                    Foreground="{Binding Path=CommentColor}"/>
 
         <!-- ZONE04 -->
-        <Button x:Name="ButtonStartNewRound" Grid.Column="9" Grid.Row="9"
+        <Button x:Name="ButtonStartNewRound" Grid.Column="10" Grid.Row="9"
                 FontSize="16" Width="100" Height="40"
-                Grid.ColumnSpan="1" Margin="0,20,0,0"
+                Grid.ColumnSpan="1" Margin="0,0,0,10"
                 IsEnabled="{Binding Path=IsNextRoundReady, Mode=OneWay}"
                 Visibility="{Binding Path=VisibilityOfZone04, Mode=OneWay}"
                 Content="New Round">
@@ -145,7 +165,7 @@
         </Button>
 
         <!-- ZONE05 -->
-        <Button x:Name="ButtonResetGame" Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="11"
+        <Button x:Name="ButtonResetGame" Grid.Column="10" Grid.ColumnSpan="2" Grid.Row="11"
                 FontSize="16" Height="30"
                 Opacity="0.7"
                 Visibility="{Binding Path=VisibilityOfZone05, Mode=OneWay}"
