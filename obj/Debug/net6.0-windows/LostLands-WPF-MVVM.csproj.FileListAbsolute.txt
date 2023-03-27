@@ -1,8 +1,3 @@
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM.csproj.AssemblyReference.cache
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\Views\ShellView.g.cs
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM_MarkupCompile.cache
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM_MarkupCompile.lref
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\LostLands-WPF-MVVM.exe
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\LostLands-WPF-MVVM.deps.json
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\LostLands-WPF-MVVM.runtimeconfig.json
@@ -12,6 +7,13 @@ C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\Ca
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\Caliburn.Micro.Platform.dll
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\Caliburn.Micro.Core.dll
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM.csproj.AssemblyReference.cache
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\Views\ShellView.g.cs
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM_MarkupCompile.cache
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM_MarkupCompile.lref
+C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\App.baml
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\Views\ShellView.baml
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM.g.resources
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM.GeneratedMSBuildEditorConfig.editorconfig
@@ -24,5 +26,3 @@ C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\re
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM.pdb
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\LostLands-WPF-MVVM.genruntimeconfig.cache
 C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\ref\LostLands-WPF-MVVM.dll
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\ApasaJB\Documents\C#.NET\LostLands-WPF-MVVM\obj\Debug\net6.0-windows\App.baml

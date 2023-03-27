@@ -2,7 +2,6 @@
 using LostLands22WPF.Models;
 using LostLands22WPF.ViewModels;
 using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 
@@ -16,7 +15,9 @@ public partial class ShellViewModel : Screen
     private static readonly string blackColor = Brushes.Black.ToString();
     private static readonly string letterPromptMessage = "Type 1 letter ->";
     private static readonly string defaultDictionary = "World_Countries";
-    private readonly string[] languageList = { "World_Countries", "Europe_Cities", "USA_States" };       // Combobox options
+    // Array of combobox options
+    private readonly string[] languageList = { "World_Countries", "Europe_Cities", "USA_States" };
+
     private readonly Gamelogic gameLogic = new();
     private readonly GameDisplay gameDisplay = new();        // Default = English
 
@@ -34,7 +35,7 @@ public partial class ShellViewModel : Screen
     private string _labelStats = String.Empty;
     private string _labelGuessedWord = String.Empty;
     private string _labelLetterPrompt = letterPromptMessage;
-    private string _textboxTypedLetter = "0";      // Any-non-alphabetical character
+    private string _textboxTypedLetter = "0";               // Any-non-alphabetical character
     private string _commentColor = blackColor;
     private string _selectedString = defaultDictionary;     // CaliburnMicro naming convention: _selectedString
                                                             // (don't change the name!)
@@ -170,5 +171,103 @@ public partial class ShellViewModel : Screen
         gameLogic.GenerateSetMaskInitializeLostWord();
         gameLogic.PlayedGamesNumber = 0;
         gameLogic.UpdatePlayedGamesNumber(0);
+    }
+
+
+    public void ButtonPreviousLetter()
+    {
+        string typedLetter;
+
+        typedLetter = TextboxTypedLetter.ToUpper() switch
+        {
+            "A" => "-",
+            "B" => "A",
+            "C" => "B",
+            "D" => "C",
+            "E" => "D",
+            "F" => "E",
+            "G" => "F",
+            "H" => "G",
+            "I" => "H",
+            "J" => "I",
+            "K" => "J",
+            "L" => "K",
+            "M" => "L",
+            "N" => "M",
+            "O" => "N",
+            "P" => "O",
+            "Q" => "P",
+            "R" => "Q",
+            "S" => "R",
+            "T" => "S",
+            "U" => "T",
+            "V" => "U",
+            "W" => "V",
+            "X" => "W",
+            "Y" => "X",
+            "Z" => "Y",
+            "-" => "Z",
+            _ => "Z",       // Default: on recommence le cycle
+        };
+
+        TextboxTypedLetter = typedLetter;
+    }
+
+
+    public void ButtonNextLetter()
+    {
+        string typedLetter;
+
+        typedLetter = TextboxTypedLetter.ToUpper() switch
+        {
+            "A" => "B",
+            "B" => "C",
+            "C" => "D",
+            "D" => "E",
+            "E" => "F",
+            "F" => "G",
+            "G" => "H",
+            "H" => "I",
+            "I" => "J",
+            "J" => "K",
+            "K" => "L",
+            "L" => "M",
+            "M" => "N",
+            "N" => "O",
+            "O" => "P",
+            "P" => "Q",
+            "Q" => "R",
+            "R" => "S",
+            "S" => "T",
+            "T" => "U",
+            "U" => "V",
+            "V" => "W",
+            "W" => "X",
+            "X" => "Y",
+            "Y" => "Z",
+            "Z" => "-",
+            "-" => "A",
+            _ => "A",       // Default: on recommence le cycle
+        };
+
+        TextboxTypedLetter = typedLetter;
+    }
+
+
+    public void ButtonA()
+    {
+        TextboxTypedLetter = "A";
+    }
+
+
+    public void ButtonH()
+    {
+        TextboxTypedLetter = "H";
+    }
+
+
+    public void ButtonP()
+    {
+        TextboxTypedLetter = "P";
     }
 }

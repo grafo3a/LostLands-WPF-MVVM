@@ -76,7 +76,7 @@ internal class Gamelogic
             if (GuessedWord != RandomWord)
             {
                 MessageBox.Show($"Sorry, you didn't find the word after {MaxNumberOfGames} games." +
-                    $"\nThe lost word was:\n\n{RandomWord}");
+                    $"\nThe lost land was:\n\n{RandomWord}");
             }
         }
 

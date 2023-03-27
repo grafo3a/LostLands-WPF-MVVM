@@ -95,7 +95,7 @@ public partial class ShellViewModel : Screen
 
     public string GameDictionaryInfo
     {
-        get { return $"[{SelectedString}] LostLands22WPF"; }
+        get { return $"{SelectedString} Dictionary"; }
     }
 
 
